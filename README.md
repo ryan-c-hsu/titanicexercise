@@ -11,6 +11,7 @@ Excel Data File -
 	Combine top two into Family Size (Convert - Size to Bins)
 6. Pclass: class of itcket - 1,2,3 (Cleanup Done - No Changes Needed)
 7. Fare: cost of ticket (Convert - Prices to Bins)
+	Fill in 0 cost tickets
 8. Cabin: cabin number (Delete)
 9. ++Embarked: Q-Queenstown, C-Cherbourg, S-Southhampton (Convert - Cities to Number)
 10. Boat: ??? (Delete)

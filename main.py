@@ -1,10 +1,11 @@
-import csv as csv
+import pandas as pd
 import numpy as np
 
-csv_file_object = csv.reader(open('Titanic_Data/train.csv', 'rb')) 	
-header = csv_file_object.next() 						
-data=[] 												
+# For .read_csv, always use header=0 when you know row 0 is the header row
+data = pd.read_csv('Data/titanic_full.csv', header=0)
 
-for row in csv_file_object: 							
-    data.append(row[0:]) 								
-data = np.array(data) 	
+df['nSex'] = df['sex'].map({'female':0, 'male':1}).astype(int)
+df['nEmbarked'] = df['embarked'].map({'S':0, 'C':1, 'Q':2})
+df['nFamilySize'] = df['sibsp'] + df['parch']
+
+

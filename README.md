@@ -1,21 +1,21 @@
 # titanicexercise
 
 Excel Data File -
-Survived: 1-yes 0-no (Cleanup Done - No changes needed)
-Name: Name of Passenger (Delete)
-Sex: Gender of Passenger (Convert - Gender to Binary)
-Age: Age of Passenger (Convert - Ages to Bins)
+0. Survived: 1-yes 0-no (Cleanup Done - No changes needed)
+1. Name: Name of Passenger (Delete)
+2. ++Sex: Gender of Passenger (Convert - Gender to Binary)
+3. Age: Age of Passenger (Convert - Ages to Bins)
 	If blank, Fill in proportion to other ages/Fill in median age
-Sibsp: number of siblings/spouses on board (Convert)	
-Parch: number of parents/children on board (Convert)
+4. Sibsp: number of siblings/spouses on board (Convert)	
+5. Parch: number of parents/children on board (Convert)
 	Combine top two into Family Size (Convert - Size to Bins)
-Pclass: class of itcket - 1,2,3 (Cleanup Done - No Changes Needed)
-Fare: cost of ticket (Convert - Prices to Bins)
-Cabin: cabin number (Delete)
-Embarked: Q-Queenstown, C-Cherbourg, S-Southhampton (Convert - Cities to Number)
-Boat: ??? (Delete)
-Body: ??? (Delete)
-Home.Dest: ??? (Delete)
+6. Pclass: class of itcket - 1,2,3 (Cleanup Done - No Changes Needed)
+7. Fare: cost of ticket (Convert - Prices to Bins)
+8. Cabin: cabin number (Delete)
+9. ++Embarked: Q-Queenstown, C-Cherbourg, S-Southhampton (Convert - Cities to Number)
+10. Boat: ??? (Delete)
+11. Body: ??? (Delete)
+12. Home.Dest: ??? (Delete)
 
 To Do:
 1. Explore Data Set Statistically & Visually

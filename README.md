@@ -1,6 +1,14 @@
 # titanicexercise
 
+To Run - Open terminal to folder with main.py and type 'python main.py'
+
 Ratios - Overall, Men, Women, Class 1, Class 2. Class 3, Embarked 1, Embarked 2, Embarked 3
+
+Done:
+1. Explore Data Set Statistically & Visually
+2. Clean Up Data Sets
+3. Build Models
+4. Cross Validate & Look at Confusion Matrix
 
 Excel Data File -
 0. Survived: 1-yes 0-no (Cleanup Done - No changes needed)
@@ -20,10 +28,3 @@ Excel Data File -
 11. Body: ??? (Delete)
 12. Home.Dest: ??? (Delete)
 
-To Do:
-1. Explore Data Set Statistically & Visually
-2. Clean Up Data Sets
-3. Build Models
-4. Cross Validate & Look at Confusion Matrix
-
-Done:

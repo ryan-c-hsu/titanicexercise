@@ -13,10 +13,25 @@ data['nSex'] = data['sex'].map({'female':0, 'male':1}).astype(int)
 data['nEmbarked'] = data['embarked'].map({'S':0, 'C':1, 'Q':2})
 data.loc[(data.nEmbarked.isnull())] = 0
 data['nFamilySize'] = data['sibsp'] + data['parch']
-
-actual = data[['survived','nSex','nEmbarked','pclass']]
+median_ages = np.zeros((2,3))
+for i in range(0,2):
+	for j in range(0,3):
+		median_ages[i,j] = data[(data['nSex'] == i) & (data['pclass'] == j+1)]['age'].dropna().median()
+data['nAge'] = data['age']
+for i in range(0,2):
+	for j in range(0,3):
+		data.loc[(data.age.isnull()) & (data.nSex == i) & (data.pclass == j+1),'nAge'] = median_ages[i,j]
+median_fare = np.zeros((1,3))
+for i in range(0,1):
+	for j in range(0,3):
+		median_fare[i,j] = data[(data['pclass'] == j+1) & (data['fare'] != 0)]['age'].median()
+data['nFare'] = data['fare']
+for i in range(0,1):
+	for j in range(0,3):
+		data.loc[((data.fare.isnull()) | (data.fare == 0)) & (data.pclass == j+1),'nFare'] = median_fare[i,j]
 
 # Getting Data for Cross Validation
+actual = data[['survived','nSex','nEmbarked','pclass']]
 ratioTable = pd.DataFrame({'actual': pd.Series([float(0)], index=['overall','men','women','class 1','class 2','class 3','embarked S', 'embarked C', 'embarked Q'])})
 ratioTable.actual[0] = float(data.survived.sum())/data.shape[0]
 ratioTable.actual[1] = float(data[(data['nSex'] == 1)]['survived'].sum())/data.shape[0]
@@ -29,23 +44,7 @@ ratioTable.actual[7] = float(data[(data['nEmbarked'] == 1)]['survived'].sum())/d
 ratioTable.actual[8] = float(data[(data['nEmbarked'] == 2)]['survived'].sum())/data.shape[0]
 
 # Cleaning for Model 1 (Cleaning Age and Fares)
-median_ages = np.zeros((2,3))
-for i in range(0,2):
-	for j in range(0,3):
-		median_ages[i,j] = data[(data['nSex'] == i) & (data['pclass'] == j+1)]['age'].dropna().median()
-data['nAge'] = data['age']
-for i in range(0,2):
-	for j in range(0,3):
-		data.loc[(data.age.isnull()) & (data.nSex == i) & (data.pclass == j+1),'nAge'] = median_ages[i,j]
 
-median_fare = np.zeros((1,3))
-for i in range(0,1):
-	for j in range(0,3):
-		median_fare[i,j] = data[(data['pclass'] == j+1) & (data['fare'] != 0)]['age'].median()
-data['nFare'] = data['fare']
-for i in range(0,1):
-	for j in range(0,3):
-		data.loc[((data.fare.isnull()) | (data.fare == 0)) & (data.pclass == j+1),'nFare'] = median_fare[i,j]
 
 # Creating model 1 
 model1traindata = data[['survived','nSex','nEmbarked','nFamilySize','nAge','nFare','pclass']]

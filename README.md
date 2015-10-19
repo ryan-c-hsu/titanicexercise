@@ -1,6 +1,6 @@
 # titanicexercise
 
-To Run - Open terminal to folder with main.py and type 'python main.py'
+To Run - Open IPYNB notebook
 
 Ratios - Overall, Men, Women, Class 1, Class 2. Class 3, Embarked 1, Embarked 2, Embarked 3
 

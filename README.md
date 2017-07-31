@@ -1,30 +1,11 @@
 # titanicexercise
 
-To Run - Open IPYNB notebook
+<h1>Abstract</h1>
 
-Ratios - Overall, Men, Women, Class 1, Class 2. Class 3, Embarked 1, Embarked 2, Embarked 3
+<p>This was created for the Titanic Competition on Kaggle. Using pandas and p, I created statistical models to predict the likelihood of passenger survival on cleaned data sheets and had an accuracy of 65-80% depending on what type of model was used. You can look at the Jupyter notebook created detailing the process <a href="https://github.com/ryan-c-hsu/titanicexercise/blob/master/main.ipynb">here</a>.</p>
 
-Done:
-1. Explore Data Set Statistically & Visually
-2. Clean Up Data Sets
-3. Build Models
-4. Cross Validate & Look at Confusion Matrix
+<h1>Process</h1>
 
-Excel Data File -
-0. Survived: 1-yes 0-no (Cleanup Done - No changes needed)
-1. Name: Name of Passenger (Delete)
-2. Sex: Gender of Passenger (Convert - Gender to Binary)
-3. Age: Age of Passenger (Convert - Ages to Bins)
-	If blank, Fill in proportion to other ages/Fill in median age
-4. Sibsp: number of siblings/spouses on board (Convert)	
-5. Parch: number of parents/children on board (Convert)
-	Combine top two into Family Size (Convert - Size to Bins)
-6. Pclass: class of itcket - 1,2,3 (Cleanup Done - No Changes Needed)
-7. Fare: cost of ticket (Convert - Prices to Bins)
-	Fill in 0 cost tickets
-8. Cabin: cabin number (Delete)
-9. Embarked: Q-Queenstown, C-Cherbourg, S-Southhampton (Convert - Cities to Number)
-10. Boat: ??? (Delete)
-11. Body: ??? (Delete)
-12. Home.Dest: ??? (Delete)
+<p>After downloading the data set, I explored the general trends in the data to help create a point of reference when going back and cleaning the data set. So I would know if I'm missing some information, which age group or class that passenger was most likely to be in. After cleaning the data, I trained the algorithm on a subset of passengers. After that I ran it on the rest of the data set using models such as Random Forrest, Logistic Regression, and Support Vector Machines. Lastly, I evaluated how well the models performed compared to the actual results and exported the data to excel files.</p>
 
+<p>If you have any more questions feel free to send me an email at ryan.c.hsu@gmail.com</p>

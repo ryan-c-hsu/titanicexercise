@@ -1,9 +1,5 @@
 # titanicexercise
 
-<header>
-<img src="https://static1.squarespace.com/static/5006453fe4b09ef2252ba068/t/508f7651e4b047ba54dd226b/1351579420472/sinking-of-titanic-33032.jpg?format=1000w">
-</header>
-
 <h1>Abstract</h1>
 
 <p>This was created for the Titanic Competition on Kaggle. Using pandas and p, I created statistical models to predict the likelihood of passenger survival on cleaned data sheets and had an accuracy of 65-80% depending on what type of model was used. You can look at the Jupyter notebook created detailing the process <a href="https://github.com/ryan-c-hsu/titanicexercise/blob/master/main.ipynb">here</a>.</p>
